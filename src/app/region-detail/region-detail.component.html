@@ -21,11 +21,14 @@
         <div class="form-group">
           <label for="exampleFormControlSelect2">Selecciona los municipios que deseas asociar</label>
           <select multiple class="form-control">
-            <option *ngFor="let municipio of municipios" [attr.selected]="isSelected(municipio.id)">{{municipio.nombre}}</option>
+            <ng-container *ngFor="let municipio of municipios">
+                <option *ngIf="isSelected(municipio.codigo)" selected>{{municipio.nombre}}</option>
+                <option *ngIf="!isSelected(municipio.codigo)">{{municipio.nombre}}</option>
+            </ng-container>
           </select>
         </div>
       </form>
-      <button type="submit" class="btn btn-primary mb-2">Guardar Cambios</button> &nbsp; <button type="submit" class="btn btn-primary mb-2">Cancelar</button>
+      <button type="submit" class="btn btn-primary mb-2" routerLink="">Guardar Cambios</button> &nbsp; <button type="submit" class="btn btn-primary mb-2" routerLink="">Cancelar</button>
     </div>
     </div>
     </div>

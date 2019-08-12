@@ -44,8 +44,10 @@ export class RegionDetailComponent implements OnInit {
   }
 
   isSelected(id){
-    let value = this.municipiosIds.includes(id) ? true : null
-    return value    
+    console.log(id)
+    console.log(this.municipiosIds.includes(id))
+     return this.municipiosIds.includes(id) 
+       
   }
 
 }
